@@ -10,8 +10,10 @@ use Proc::ProcessTable;
 my $FileEditor = "/bin/nano";
 my $InitDName = "/home/empowner/bin/empire";
 my $EMPIREDIR = "/home/empowner/empire";
-my $BackupCommand = "/home/empowner/EmpBackup/empbackup.pl";
+my $BackupCommand = "/home/empowner/EmpireBackup/empirebackup.pl";
 my $ServerLogFile = "/home/empowner/empire/logs/server0.log";
+my $ScheduleFile = "/home/empowner/empire/etc/empire/schedule";
+my $ServerConfigFile = "/home/empowner/empire/etc/empire/econfig";
 my $Pager = "/usr/bin/less";
 
 ###################################################
@@ -88,8 +90,8 @@ sub MainMenu
                                       '3', 'Server Console',
                                       '4', 'Turn Off Respawn',
                                       '5', 'Turn Respawn On',
-                                      '6', 'Edit server.cfg',
-                                      '7', 'Edit world.cfg',
+                                      '6', 'Edit econfig',
+                                      '7', 'Edit Schedule',
                                       '8', 'Run a Backup',
                                       '9', 'Kill Empire',
                                       '10', 'View Log',
@@ -137,12 +139,12 @@ while (-1)
 	elsif ($menuselection eq "6")
 	{
 		# Edit server.cfg file
-		system("$FileEditor $EMPIREDIR/dat/server.cfg");
+		system("$FileEditor $ServerConfigFile");
 	}
 	elsif ($menuselection eq "7")
 	{
-		# Edit world.cfg file
-		system("$FileEditor $EMPIREDIR/dat/default/world.cfg");
+		# Edit schedule file
+		system("$FileEditor $ScheduleFile");
 	}
 	elsif ($menuselection eq "8")
 	{
