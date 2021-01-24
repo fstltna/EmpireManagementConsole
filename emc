@@ -29,7 +29,7 @@ chop($HOST);
 
 my $KILL_COMMAND = "killall emp_server";
 
-my $EMC_ver = "1.0.0";
+my $EMC_ver = "1.0.1";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})

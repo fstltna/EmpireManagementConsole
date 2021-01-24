@@ -1,4 +1,4 @@
-# EmpireManagementConsole (1.0.0)
+# EmpireManagementConsole (1.0.1)
 Allows you to manage your Empire - 
 Official support sites: [Official Github Repo](https://github.com/fstltna/LugdunonManagementConsole) - [Official Forum](https://lugdunoncity.org/index.php/forum/lugdunon-management-console)
 ---
