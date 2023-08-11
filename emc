@@ -11,9 +11,9 @@ my $FileEditor = "/bin/nano";
 my $InitDName = "/home/empowner/bin/empire";
 my $EMPIREDIR = "/home/empowner/empire";
 my $BackupCommand = "/home/empowner/EmpireBackup/empirebackup.pl";
-my $ServerLogFile = "/home/empowner/empire/var/empire/server.log";
-my $ScheduleFile = "/home/empowner/empire/etc/empire/schedule";
-my $ServerConfigFile = "/home/empowner/empire/etc/empire/econfig";
+my $ServerLogFile = "$EMPIREDIR/var/empire/server.log";
+my $ScheduleFile = "$EMPIREDIR/etc/empire/schedule";
+my $ServerConfigFile = "$EMPIREDIR/etc/empire/econfig";
 my $Pager = "/usr/bin/less";
 
 ###################################################
@@ -29,7 +29,7 @@ chop($HOST);
 
 my $KILL_COMMAND = "killall emp_server";
 
-my $EMC_ver = "1.0.1";
+my $EMC_ver = "1.1.0";
 my $ServerStatus = "foo";
 
 if ($ENV{'EDITOR'})
@@ -165,7 +165,15 @@ while (-1)
 	elsif ($menuselection eq "10")
 	{
 		# Display Log File
-                system("$Pager $ServerLogFile");
+		if (-f $ServerLogFile)
+		{
+			system("$Pager $ServerLogFile");
+		}
+		else
+		{
+			print "$ServerLogFile is not found. Try running the server...\n";
+			sleep 3;
+		}
 	}
 }
 
